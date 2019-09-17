@@ -1,28 +1,13 @@
-<html>
-    <head>
-        <title>Taetae's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
-            {% for post in posts %}
-                <div>
-                    <p>published: {{ post.published_date }}</p>
-                    <h2><a href="">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                </div>
-            {% endfor %}
-        <div>
-            <p>published: 2019.09.06 18:50</p>
-            <h2><a href="">첫번째 게시글</a></h2>
-            <p>안녕 화일아 잘 지내고 있니? 나는 지금 공부 중이야</p>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <div>
-            <p>published: 2019.09.06 18:55</p>
-            <h2><a href="">두번째 게시글</a></h2>
-            <p>얼른 얼른 시간이 가서 널 만날 수 있으면 좋겠다 사랑해!</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
