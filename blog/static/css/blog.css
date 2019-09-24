@@ -23,6 +23,11 @@ p, .date, .save {
     font-family: 'Noto Serif KR', serif;
 }
 
+.top-menu-hello {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+}
+
 .date {
     color: #828282;
 }
@@ -48,4 +53,8 @@ p, .date, .save {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
 }
